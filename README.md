@@ -32,7 +32,9 @@ We will follow the following directory structure for the project:
 ### Initial setup: 
 - Clone aktualizr repository:
     ```
-    $ mkdir -p ~/gsoc-workdir && cd ~/gsoc-workdir
+    ~:
+    $ git clone https://github.com/singhals163/gsoc-24.git gsoc-workdir
+    $ cd gsoc-workdir
 
     ~/gsoc-workdir: 
     $ git clone --recursive <link to final repo> -b <final branch name> aktualizr
