@@ -8,7 +8,7 @@ We will follow the following directory structure for the project:
 |  |--aktualizr (contains aktualizr source code)
 |  |--gsoc-2024 (yocto build files for the project)
 |  |--torizon-cloud (directory for pushing image to torizon cloud)
-|  |--calc-root-hash.sh (for calculating the content-hash)
+|  |--calc-root-hash-dev.sh (for calculating the content-hash)
 |  |--images (stores versions of the bundles and root images)
 |  |  |--v1.0
 |  |  |  |--update-bundle-verdin-imx8mm.raucb (rauc bundle)
@@ -106,7 +106,7 @@ We will follow the following directory structure for the project:
     $ sudo mount -o loop images/v1.0/torizon-minimal-verdin-imx8mm-*.rootfs.ext4 /tmp/root
 
     # calculates the content-hash and prints it
-    $ sudo ./calc-root-hash.sh /tmp/root
+    $ sudo ./calc-root-hash-dev.sh /tmp/root
     $ sudo umount /tmp/root
     ```
 
@@ -123,9 +123,9 @@ We will follow the following directory structure for the project:
     $ uptane-sign targets upload --repo image-repo --input lorem.txt --name lorem.img --version v1.0 [--verbose]
     $ uptane-sign targets add-uploaded \
         --repo image-repo --input lorem.txt --name lorem.img --version v1.0 \
-        --hardwareids verdin-imx8mm-swupdate \
+        --hardwareids verdin-imx8mm-rauc \
         --customMeta '{
-            "swupdate": {
+            "rauc": {
                 "rawHashes": {
                     "sha256": "<hash-digest>"
                 }
