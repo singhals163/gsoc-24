@@ -127,12 +127,10 @@ We will follow the following directory structure for the project:
   ```
   ~/gsoc-workdir/torizon-cloud:
 
-  # TODO: REVIEW THIS: lorem.txt/lorem.img was just an example; it wasn't supposed to be pushed to the server.
-
   $ uptane-sign targets pull --repo image-repo [--verbose]
-  $ uptane-sign targets upload --repo image-repo --input lorem.txt --name lorem.img --version v1.0 [--verbose]
+  $ uptane-sign targets upload --repo image-repo --input ../images/v1.0/update-bundle-verdin-imx8mm.raucb --name update-bundle-verdin-imx8mm.img --version v1.0 [--verbose]
   $ uptane-sign targets add-uploaded \
-      --repo image-repo --input lorem.txt --name lorem.img --version v1.0 \
+      --repo image-repo --input ../images/v1.0/update-bundle-verdin-imx8mm.raucb --name update-bundle-verdin-imx8mm.img --version v1.0 \
       --hardwareids verdin-imx8mm-rauc \
       --customMeta '{
           "rauc": {
